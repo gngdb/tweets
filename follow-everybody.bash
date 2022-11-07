@@ -6,3 +6,4 @@ while IFS=/ read -r user repo; do
 	git remote add "$user" "https://github.com/$user/$repo"
 	git fetch "$user"
 done < <(curl https://api.github.com/repos/diracdeltas/tweets/forks | jq -r '.[].full_name')
+
